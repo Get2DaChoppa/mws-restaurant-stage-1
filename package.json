@@ -1,0 +1,40 @@
+{
+    "name": "restaurant-app",
+    "version": "1.0.0",
+    "description": "restaurant rating app",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "setup": "npm install --save-dev gulp gulp-plumber gulp-rename gulp-jshint gulp-concat gulp-babel browser-sync gulp-sass gulp-autoprefixer gulp-imagemin gulp-cache"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Get2DaChoppa/mws-restaurant-stage-1.git"
+    },
+    "keywords": [
+        "udacity",
+        "restaurant",
+        "rating",
+        "app"
+    ],
+    "author": "Sotiris Bimpas",
+    "license": "UNLICENSED",
+    "bugs": {
+        "url": "https://github.com/Get2DaChoppa/mws-restaurant-stage-1/issues"
+    },
+    "homepage": "https://github.com/Get2DaChoppa/mws-restaurant-stage-1#readme",
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "browser-sync": "^2.23.6",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^4.1.0",
+        "gulp-babel": "^7.0.1",
+        "gulp-cache": "^1.0.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-imagemin": "^4.1.0",
+        "gulp-jshint": "^2.1.0",
+        "gulp-plumber": "^1.2.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^3.1.0"
+    }
+}
