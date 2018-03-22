@@ -41,7 +41,6 @@ gulp.task('javascript', function() {
     }}))
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
-    .pipe(concat(JS_OUTPUT_FILE))
     .pipe(babel())
     .pipe(gulp.dest(JS_DEST + '/'))
     .pipe(browserSync.reload({ stream:true }))
@@ -69,5 +68,5 @@ gulp.task('images', function() {
 gulp.task('default', ['browser-sync','css','javascript'], function() {
   gulp.watch(JS_SOURCE + '/**/*.js', ['javascript']).on('change',browserSync.reload);
   gulp.watch(CSS_SOURCE + '/**/*.scss', ['css']).on('change',browserSync.reload);
-  gulp.watch(WATCH_FILE_EXTENSIONS, ['bs-reload']);
+  gulp.watch("dist/**/*"+WATCH_FILE_EXTENSIONS).on('change',browserSync.reload);
 });
