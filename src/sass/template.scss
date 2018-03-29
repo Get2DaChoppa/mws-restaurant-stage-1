@@ -1,0 +1,89 @@
+/* ====================== Layout ====================== */
+#maincontent {
+  height: calc(100vh - 30px - 5vh);
+  display: flex;
+  flex-direction: row;
+  }
+#map-container {
+  order: 2;
+  width: 85%;
+  max-width: calc(100% - 360px);
+}
+#map {
+  height: calc(100vh - 30px - 5vh);
+  overflow: hidden;
+}
+#filter-list {
+  width: 25%;
+  min-width: 360px;
+}
+#restaurants-list {
+  overflow: auto;
+}
+
+.inside #maincontent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.inside #map-container {
+  width: calc(75% -360px);
+  height: auto;
+  order: 3;
+}
+.inside #restaurant-container {
+  width: 350px;
+  height: 60%;
+}
+.inside #reviews-container {
+  width: 350px;
+  height: 40%;
+  order: 2;
+}
+
+@media screen and (max-width: 800px) {
+  /*==================== Home view  ===================*/
+  #maincontent {
+    display: flex;
+    flex-direction: column;
+  }
+  #map-container {
+    order: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  #map {
+    height: 35vh;
+  }
+  #filter-list {
+    width: 100%;
+  }
+  /*==================== Restaurant ===================*/
+  .inside #maincontent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .inside #map-container {
+    width: 100%;
+    order: 0;
+  }
+  .inside #map {
+
+  }
+  .inside #restaurant-container {
+    width: 100%;
+    padding: 5px;
+  }
+  .inside #reviews-container {
+    width: 100%;
+  }
+  #reviews-list li {
+    width: 100%;
+  }
+  .inside #footer {
+
+  }
+}
+

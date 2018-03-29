@@ -9,6 +9,7 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyImage = require('gulp-imagemin');
 var cache = require('gulp-cache');
+var concatCss = require('gulp-concat-css');
 
 var JS_SOURCE = 'src/js';
 var JS_DEST = 'dist/js';
@@ -55,6 +56,7 @@ gulp.task('css', function() {
     }}))
     .pipe(sass())
     .pipe(autoprefixer('last 2 versions'))
+    .pipe(concatCss("styles.css"))
     .pipe(gulp.dest(CSS_DEST + '/'))
     .pipe(browserSync.reload({ stream:true }))
 });
