@@ -17,7 +17,10 @@
         '/../img/9.jpg',
         '/../index.html',
         '/../restaurant.html',
-        '/../data/restaurants.json'
+        '/../data/restaurants.json',
+        '/../js/dbhelper.js',
+        '/../js/main.js',
+        '/../js/restaurant_info.js'
     ];
 
 

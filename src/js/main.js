@@ -35,7 +35,7 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
     option.value = neighborhood;
-    option.setAttribute('role','listitem');
+    option.setAttribute('role','option');
     select.append(option);
   });
 }
@@ -64,7 +64,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     const option = document.createElement('option');
     option.innerHTML = cuisine;
     option.value = cuisine;
-    option.setAttribute('role','listitem');
+    option.setAttribute('role','option');
     select.append(option);
   });
 }
@@ -143,6 +143,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.setAttribute('alt',restaurant.name);
   li.append(image);
 
   const name = document.createElement('h1');
@@ -161,6 +162,7 @@ createRestaurantHTML = (restaurant) => {
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   more.setAttribute('role','button');
+  more.setAttribute('aria-label', 'View details about '+restaurant.name+' restaurant.');
   li.append(more)
 
   return li
@@ -180,14 +182,3 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 }
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('js/sw.js').then(function(registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
